@@ -3,7 +3,7 @@ SRCS= crappy_phonebook.cpp PhoneBook.cpp Contact.cpp
 FLAGS= -Wall -Wextra -Werror -std=c++98
 
 
-$(NAME):
+$(NAME): $(SRCS)
 		c++ $(FLAGS) $(SRCS) -o $(NAME)
 
 re: fclean $(NAME)

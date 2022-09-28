@@ -1,5 +1,4 @@
 #include "PhoneBook.hpp"
-
 PhoneBook::PhoneBook (void)
 {
 	last = 0;
@@ -54,7 +53,10 @@ void PhoneBook::search(void)
 		std::cout<< "Insert index of the contact:";
 		std::cin>> i;
 		while (i < 1 || i > total){
+			
 			std::cout<<"Out of range retry:";
+			std::cin.clear();
+			std::cin.ignore(1000, '\n');
 			std::cin>> i;
 		}
 		std::cout<< "Name:" << rubrica[i - 1].name << std::endl;

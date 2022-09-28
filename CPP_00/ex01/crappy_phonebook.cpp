@@ -13,22 +13,34 @@ int main ()
 		/*std::getline (std::cin, command);*/std::cin>> command;
 		if (command == "ADD")
 		{
-			std::cout<< "Insert name:";
-			while (name == "")
+
+			std::cin.ignore();
+			while (name == ""){
+				std::cout<< "Insert name:";
 				std::getline (std::cin, name);
-			std::cout<< "Insert last name:";
-			while (last_name == "")
+			}
+			while (last_name == ""){
+				std::cout<< "Insert last name:";
 				std::getline (std::cin, last_name);
-			std::cout<< "Insert nickname:";
-			while (nickname == "")
+			}
+			while (nickname == ""){
+				std::cout<< "Insert nickname:";
 				std::getline (std::cin, nickname);
-			std::cout<< "Insert phone number:";
-			while (phone_number == "")
+			}
+			while (phone_number == ""){
+				std::cout<< "Insert phone number:";
 				std::getline (std::cin, phone_number);
-			std::cout<< "Insert darkest secret:";
-			while (secret == "")
+			}
+			while (secret == ""){
+				std::cout<< "Insert darkest secret:";
 				std::getline (std::cin, secret);
+			}
 			phone1.add_contact(name, last_name, nickname, phone_number, secret);
+			name.clear();
+			last_name.clear();
+			nickname.clear();
+			phone_number.clear();
+			secret.clear();
 		}
 		else if (command == "SEARCH")
 			phone1.search();
