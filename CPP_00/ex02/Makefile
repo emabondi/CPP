@@ -1,7 +1,14 @@
-make:
-		c++ -Wall -Wextra -Werror -std=c++98 tests.cpp Account.cpp -o bank_account
+NAME= bank_account
+SRCS= tests.cpp Account.cpp
+FLAGS= -Wall -Wextra -Werror -std=c++98
 
-re: clean make
 
-clean: 
-		rm -f bank_account
+$(NAME):
+		c++ $(FLAGS) $(SRCS) -o $(NAME)
+
+re: fclean $(NAME)
+
+fclean: 
+		rm -f $(NAME)
+
+.PHONY: re fclean

@@ -1,17 +1,14 @@
 NAME = BraiiiiiiinnnzzzZ
 CC = c++
-SRCS = main.cpp Zombie.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-# $(NAME): 
+$(NAME):
+	c++ $(CFLAGS) $(SRCS) -o $(NAME)
 
-all: 
-	@$(CC) main.cpp Zombie.cpp $(CFLAGS) -o $(NAME)
+re: fclean $(NAME)
 
-re: clean all
-
-clean: 
+fclean: 
 		rm -f BraiiiiiiinnnzzzZ
 
-
-.PHONY: all re clean
+.PHONY: re fclean

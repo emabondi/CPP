@@ -1,12 +1,14 @@
-NAME: crappy_phonebook
-SRCS: crappy_phonebook.cpp PhoneBook.cpp Contact.cpp
-FLAGS: -Wall -Wextra -Werror -std=c++98
+NAME= crappy_phonebook
+SRCS= crappy_phonebook.cpp PhoneBook.cpp Contact.cpp
+FLAGS= -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+
 $(NAME):
-		c++ $(FLAGS) $(SRCS) -o crappy_phonebook
+		c++ $(FLAGS) $(SRCS) -o $(NAME)
 
-re: clean all
+re: fclean $(NAME)
 
-clean: 
-		rm -f crappy_phonebook
+fclean: 
+		rm -f $(NAME)
+
+.PHONY: re fclean

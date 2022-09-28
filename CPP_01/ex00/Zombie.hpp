@@ -15,4 +15,7 @@ private:
 	std::string	_name;
 };
 
+Zombie* newZombie( std::string name );
+/*Zombie**/void randomChump( std::string name );
+
 #endif

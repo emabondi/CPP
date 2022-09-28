@@ -1,17 +1,14 @@
-NAME: megaphone
+NAME= megaphone
 CC = c++
-SRCS: megaphone.cpp
-CFLAGS: -Wall -Wextra -Werror -std=c++98
+SRCS= megaphone.cpp
+FLAGS= -Wall -Wextra -Werror -std=c++98
 
+$(NAME):
+		c++ $(FLAGS) $(SRCS) -o $(NAME)
 
-$(NAME): $(SRCS)
-		@$(CC) $(CFLAGS) -o $(NAME)
-
-all: $(NAME)
-
-clean: 
+fclean: 
 		rm -f megaphone
 
-re: clean all
+re: fclean $(NAME)
 
-.PHONY: all re clean
+.PHONY: re fclean
