@@ -33,19 +33,9 @@ void Harl::complain( std::string level)
 
 }
 
-Harl::Harl(char* limit)
+Harl::Harl(int limit)
 {
-	std::string str = limit;
-	if (str == "DEBUG")
-		_limit = 0;
-	else if (str == "INFO")
-		_limit = 1;
-	else if (str == "WARNING")
-		_limit = 2;
-	else if (str == "ERROR")
-		_limit = 3;
-	else
-		_limit = 4;
+	_limit = limit;
 }
 
 void	Harl::debug(void)

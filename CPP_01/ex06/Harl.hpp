@@ -5,7 +5,7 @@
 
 class Harl {
 public:
-		Harl(char* limit);
+		Harl(int limit);
 		int 	check(std::string level);
 		void	complain( std::string level);
 		void	(Harl::*call[4])();
@@ -19,5 +19,7 @@ private:
 		void	error (void);
 		int		_limit;
 };
+
+int check(char* str);
 
 #endif
