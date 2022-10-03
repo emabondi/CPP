@@ -4,6 +4,8 @@
 
 int check(char* limit)
 {
+	if (limit == NULL)
+		return (-1);
 	std::string str = limit;
 	if (str == "DEBUG")
 		return (0);
@@ -34,4 +36,5 @@ int main(int argc, char *argv[])
 	}
 	else
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	return (0);
 }
