@@ -2,19 +2,19 @@
 
 Fixed::Fixed()
 {
-	std::cout<< "Default constructor called" << std::endl;
+	//std::cout<< "Default constructor called" << std::endl;
 	_numberValue = 0;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	std::cout<< "Copy constructor called" << std::endl;
+	//std::cout<< "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
 Fixed &Fixed::operator=(const Fixed &f)
 {
-	std::cout<< "Copy assignment operator called" << std::endl;
+	//std::cout<< "Copy assignment operator called" << std::endl;
 	_numberValue = f.getRawBits();
 	return (*this);
 }
@@ -42,13 +42,13 @@ int Fixed::toInt( void ) const
 
 int Fixed::getRawBits(void) const
 {
-	std::cout<< "getRawBits member function called" << std::endl;
+	//std::cout<< "getRawBits member function called" << std::endl;
 	return(_numberValue);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout<< "setRawBits member function called" << std::endl;
+	//std::cout<< "setRawBits member function called" << std::endl;
 	_numberValue = raw;
 }
 
@@ -102,7 +102,7 @@ Fixed Fixed::operator+(const Fixed &fixed){
 	temp.setRawBits(_numberValue + fixed._numberValue);
 	return (temp);
 }
-Fixed Fixed::operator-(const Fixed &fixed){
+Fixed Fixed::operator-(const Fixed &fixed) const {
 	Fixed temp;
 	temp.setRawBits(_numberValue - fixed._numberValue);
 	return (temp);
@@ -133,5 +133,5 @@ const Fixed &Fixed::max(Fixed const &a, Fixed const &b){
 
 Fixed::~Fixed()
 {
-	std::cout<< "Destructor called" << std::endl;
+	//std::cout<< "Destructor called" << std::endl;
 }
