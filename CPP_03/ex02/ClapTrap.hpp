@@ -19,8 +19,8 @@ class ClapTrap{
 	protected:
 		std::string			_name;
 		static const int	_hp = 100;
-		static const int	_ep = 50;
-		static const int	_ad = 20;
+		static const int	_ep = 100;
+		static const int	_ad = 30;
 		int 				_hitPoints;
 		int 				_energyPoints;
 		int 				_attackDamage;

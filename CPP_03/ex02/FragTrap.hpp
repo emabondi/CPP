@@ -1,12 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ebondi <ebondi@student.42roma.it>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 13:50:58 by ebondi            #+#    #+#             */
-/*   Updated: 2022/12/12 13:50:58 by ebondi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+#include "ClapTrap.hpp"
 
+class ClapTrap;
+
+
+class FragTrap : public ClapTrap{
+	public:
+		FragTrap();
+		FragTrap(std::string const name);
+		FragTrap& operator = (const FragTrap &f);
+		FragTrap(const FragTrap &ScavTrap);
+		~FragTrap();
+		void highFivesGuys();
+};
+
+#endif
