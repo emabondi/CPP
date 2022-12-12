@@ -17,7 +17,7 @@ class ClapTrap{
 		
 		~ClapTrap();
 	protected:
-		std::string const _name;
+		std::string			_name;
 		static const int	_hp = 100;
 		static const int	_ep = 50;
 		static const int	_ad = 20;

@@ -23,7 +23,10 @@ ClapTrap::ClapTrap(const ClapTrap &ClapTrap)
 ClapTrap& ClapTrap::operator=(const ClapTrap& f)
 {
 	std::cout<< "Copy assignment operator called" << std::endl;
-	_name = f.getName();
+	this->_name = f._name;
+	this->_hitPoints = f._hp;
+	this->_energyPoints = f._ep;
+	this->_attackDamage = f._attackDamage;
 	return (*this);
 }
 
@@ -41,24 +44,24 @@ void ClapTrap::attack(const std::string& target){
 void ClapTrap::takeDamage(unsigned int amount){
 	if (_hitPoints > 0){
 		_hitPoints -= amount;
-		std::cout<< "ClapTrap " << _name << " has lost " << amount \
+		std::cout<< _name << " has lost " << amount \
 			<< " hit points. Hit points:" << _hitPoints << std::endl;
 		
 	}
 	else
-		std::cout<< "ClapTrap " << _name << " is already dead."<< std::endl;
+		std::cout<< _name << " is already dead."<< std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
 	if (_energyPoints > 0){
 		_hitPoints += amount;
-		std::cout<< "ClapTrap " << _name << " repairs itself, it gets " << amount \
+		std::cout<< _name << " repairs itself, it gets " << amount \
 			<< " hit points back. Hit points:" << _hitPoints << std::endl;
 		
 		_energyPoints--;
 	}
 	else
-		std::cout<< "ClapTrap " << _name << " has finished the energy points."<< std::endl;
+		std::cout<< _name << " has finished the energy points."<< std::endl;
 }
 
 std::string ClapTrap::getName(void) const {
