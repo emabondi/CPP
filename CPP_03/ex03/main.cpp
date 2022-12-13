@@ -4,18 +4,13 @@
 #include "DiamondTrap.hpp"
 
 int main( void ) {
-ClapTrap b("Guido");
-ScavTrap a;
-FragTrap c("Ripa");
-a.guardGate();
-c.highFivesGuys();
+DiamondTrap a("Ripa");
+//DiamondTrap a;
 a.attack("Piergiorgio");
-b.attack("Nimedio");
-c.attack("Bufalo");
-a.takeDamage(3);
-b.takeDamage(4);
-c.takeDamage(2);
-for (int i = 0; i<3; i++)
-	c.beRepaired(1);
+a.guardGate();
+a.highFivesGuys();
+a.whoAmI();
+a.takeDamage(10);
+a.beRepaired(3);
 return 0;
 }
