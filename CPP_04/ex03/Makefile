@@ -1,5 +1,5 @@
 NAME = AMateria
-SRCS =  main.cpp AMateria.cpp Ice.cpp Cure.cpp
+SRCS =  main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(SRCS)
