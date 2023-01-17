@@ -13,12 +13,12 @@ class Form{
 		Form(const Form &Form);
 		Form& operator = (const Form& f);
 		virtual ~Form();
+		virtual void execute(Bureaucrat const & executor) const = 0;
 		const std::string getName() const;
 		std::string getifSigned()const;
 		int get_gradeToSign() const;
 		int get_gradeToExec() const;
 		void	beSigned(const Bureaucrat &f);
-		void execute(Bureaucrat const & executor) const;
 
 		class GradeTooLowException : public std::exception {
 			const char *what() const throw();

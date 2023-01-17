@@ -32,5 +32,7 @@ int main (){
 	
 	form1.execute(ilsupremo_ebassi);
 	form2.execute(ilsupremo_ebassi);
+	form2.execute(ilsupremo_ebassi);
+	form2.execute(ilsupremo_ebassi);
 	form3.execute(ilsupremo_ebassi);
 }

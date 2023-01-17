@@ -7,7 +7,10 @@
 
 int main (){
 Intern someRandomIntern;
+Bureaucrat perrons("Perrone", 1);
 Form* rrf;
-rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+rrf->beSigned(perrons);
+rrf->execute(perrons);
 delete (rrf);
 }
