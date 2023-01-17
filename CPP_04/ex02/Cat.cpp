@@ -18,6 +18,10 @@ Cat& Cat::operator=(const Cat& f){
 	return (*this);
 }
 
+void Cat::makeSound() const {
+	std::cout<< "MIAO MIAO!\n";
+}
+
 Brain* Cat::getBrain() const{
 	return (this->_br);
 }

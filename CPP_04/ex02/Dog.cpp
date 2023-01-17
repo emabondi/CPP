@@ -18,6 +18,10 @@ Dog& Dog::operator=(const Dog& f){
 	return (*this);
 }
 
+void Dog::makeSound() const {
+	std::cout<< "WOOF WOOF!\n";
+}
+
 Brain* Dog::getBrain() const{
 	return (this->_br);
 }
