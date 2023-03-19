@@ -1,5 +1,5 @@
 NAME = array
-SRCS =  main.cpp Array.cpp
+SRCS =  main.cpp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(SRCS)
