@@ -1,5 +1,17 @@
 #include "BitcoinExchange.hpp"
 
+bool	check_value(std::string value){
+	char	*endptr;
+	long	num = strtol(value.c_str(), &endptr, 10);
+	if (num > 2147483647){
+		std::cout << "Error: too large number.\n";
+		return 0;}
+	else if (num < 0){
+		std::cout << "Error: not a positive number.\n";
+		return 0;}
+	return 1;
+}
+
 std::map<std::string, float>	getData()
 {
 	std::map<std::string, float> _data;
@@ -27,20 +39,28 @@ void	check_exchange(char *f, std::map<std::string, float> map)
 	while(std::getline(file, line))
 	{
 		std::string date;
+		std::string	svalue;
 		float		value;
 		float		result;
-		pos = line.find('|');
+
+		if ((pos = line.find('|')) == -1){
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue ;
+		}
 		date = line.substr(0, pos - 1);
-		value = atof(line.substr(pos + 2).c_str());
+		svalue = line.substr(pos + 2);
 		//check date
-		//check value
-		//if (map.count(date))
+		if(!check_value(svalue))
+			continue ;
+		value = atof(svalue.c_str());
+		if (map.count(date))
 			result = map[date];
-		//else{
+		else{
 		std::map<std::string, float>::iterator i = map.upper_bound(date);
 		i--;
 		result = map[i->first];
-		//}
-		std::cout <<"prova:" << result << " val" << value << std::endl;
+		}
+		result *= value;
+		std::cout << date << " => " << value << " = " << result << std::endl;
 	}
 }
