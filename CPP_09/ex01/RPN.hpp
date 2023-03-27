@@ -8,6 +8,6 @@
 //#include <sstream>
 #include <stdlib.h>
 
-void	execute_rpn(std::string str);
+void	execute_rpn(std::string &str);
 
 #endif
