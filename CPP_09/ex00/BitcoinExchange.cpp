@@ -21,10 +21,12 @@ bool	check_date(std::string date){
 			((month == 1 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && day > 31))){
 		std::cout << "Error: month or day => " << month << "-" << day << std::endl;
 		return false;}
-	if (month == 2 && year % 4 == 0 && day > 29)
+	if (month == 2 && year % 4 == 0 && day > 29){
 		std::cout << "Error: february day => " << date << std::endl;
-	else if (month == 2 && day > 28)
+		return false;}
+	else if (month == 2 && day > 28){
 		std::cout << "Error: february day => " << date << std::endl;
+		return false;}
 		//std::cout << "Year:" << year << " month: " << month << " day: " << day << std::endl;
 
 	return true;
