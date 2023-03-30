@@ -48,6 +48,10 @@ std::map<std::string, float>	getData()
 {
 	std::map<std::string, float> _data;
 	std::ifstream file("data.csv");
+	if (!file){
+		std::cout << "Missing data.csv\n";
+		exit(0);
+	}
 	std::string line;
 	std::getline(file, line);
 	int pos;
