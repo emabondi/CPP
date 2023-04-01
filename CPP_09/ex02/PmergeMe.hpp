@@ -10,6 +10,6 @@
 //#include <sstream>
 #include <stdlib.h>
 
-std::vector<int>& merge_insert_sort(std::vector<int> &vec, int	size);
+std::vector<int>& merge_insert_sort(std::vector<int> &vec);
 
 #endif

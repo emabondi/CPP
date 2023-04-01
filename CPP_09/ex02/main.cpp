@@ -25,9 +25,16 @@ int	main(int argc, char *argv[])
 	}
 
 	std::cout << "Before: ";
-	for (int i = 0; i < size ; i++)
-		std::cout << vec[i] << " ";
-	std::cout<<"\nsize:" << size << "/2:" << size / 2;
-	//vec = merge_insert_sort(vec, size);
+	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
+			std::cout << *l << " ";
+		}
+	//for (int i = 0; i < size ; i++)
+		//std::cout << vec[i] << " ";
+	//std::cout<<"\nvecsize:" << vec.size() << "    /2:" << size / 2;
+	vec = merge_insert_sort(vec);
+	std::cout << "\nAfter: ";
+	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
+			std::cout << *l << " ";
+		}
 	return 0;
 }
