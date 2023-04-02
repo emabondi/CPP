@@ -18,27 +18,35 @@ std::vector<int>& merge_insert_sort(std::vector<int> &vec)
 		//	it++;
 		std::vector<int>::const_iterator begin = vec.begin();
 		std::vector<int>::const_iterator end = vec.end();
-		std::cout<< "begin: "<<*begin<<" end: "<<(*end--)<<" size: "<< vec.size()<<std::endl;
+		//std::cout<< "begin: "<<*begin<<" end: "<<(*end--)<<" size: "<< vec.size()<<std::endl;
 		std::vector<int> v1(begin, it);
-		//std::cout << "\nv1: ";
-		//for (std::vector<int>::iterator l = v1.begin(); l != v1.end(); l++){
-		//	std::cout << *l << " ";
-		//}
-		std::vector<int> v2(it, end + 1);
-		//std::cout << "\nv2: "
-		//for (std::vector<int>::iterator l = v2.begin(); l != v2.end(); l++){
-		//	std::cout << *l << " ";
-		//}
+		std::cout << "\nv1: ";
+		for (std::vector<int>::iterator l = v1.begin(); l != v1.end(); l++){
+			std::cout << *l << " ";
+		}
+		std::vector<int> v2(it, end); //su portatile end + 1
+		std::cout << "\nv2: ";
+		for (std::vector<int>::iterator l = v2.begin(); l != v2.end(); l++){
+			std::cout << *l << " ";
+		}
 		v1 = merge_insert_sort(v1);
 		v2 = merge_insert_sort(v2);
 		vec = v1;
-		/*for (std::vector<int>::iterator l = v2.begin(); l != v2.end(); l++){
-			for (std::vector<int>::iterator j = vec.begin(); j != vec.end(); j++){
-				std::cout<<"ciaol: "<< *l << " j: "<< *j<< std::endl;
-				if (*j >= *l)
+		for (std::vector<int>::iterator l = v2.begin(); l != v2.end(); l++){
+			std::vector<int>::iterator j = vec.end();
+			j--;
+			std::cout << "\nvec: " << *j << "\nv2: " << *l;
+			while (1){
+				if ((*j) >= (*l)){
+					std::cout << "provo a inserire\n";
 					vec.insert(j, *l);
-			}
-		}*/
+					}
+				if (j != vec.begin())
+					j--;
+				else
+					break ;
+				}
+		}
 		return vec;
 	}
 	return vec;

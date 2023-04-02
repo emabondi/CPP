@@ -70,7 +70,6 @@ void	check_exchange(char *f, std::map<std::string, float> map)
 {
 	std::ifstream file(f);
 	std::string line;
-	std::getline(file, line);
 	int pos;
 	while(std::getline(file, line))
 	{
@@ -79,6 +78,8 @@ void	check_exchange(char *f, std::map<std::string, float> map)
 		float		value;
 		float		result;
 
+		if (line.rfind("date | value", 0) == 0)
+			std::getline(file, line);
 		if ((pos = line.find('|')) == -1){
 			std::cout << "Error: bad input => " << line << std::endl;
 			continue ;

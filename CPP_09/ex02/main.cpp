@@ -10,13 +10,10 @@ int	main(int argc, char *argv[])
 {
 	if (argc <= 2){
 		return (ft_error("Not enough arguments"));}
-	argv++;
 	std::vector<int> vec;
 	std::deque<int> deq;
-	int	size = argc - 1;
 
-	for (int i = 0; i < size; i++)
-	{
+	for (int i = 1; i < argc; i++){
 		int	x = atoi(argv[i]);
 		if (x <= 0)
 			return (ft_error("Wrong argument"));
