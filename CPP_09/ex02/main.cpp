@@ -4,7 +4,7 @@ long long	get_time(void)
 	struct timeval	timeval;
 
 	gettimeofday(&timeval, NULL);
-	return ((timeval.tv_sec) + (timeval.tv_usec));
+	return ((timeval.tv_sec * 10e6) + (timeval.tv_usec));
 }
 
 int	ft_error(std::string str)
@@ -32,9 +32,9 @@ int	main(int argc, char *argv[])
 	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
 			std::cout << *l << " ";
 		}
-	int	start = get_time();
+	long long	start = get_time();
 	vec = merge_insert_sort(vec);
-	int	end = get_time();
+	long long	end = get_time();
 	std::cout << "\nAfter: ";
 	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
 			std::cout << *l << " ";
