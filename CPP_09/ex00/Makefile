@@ -10,7 +10,7 @@ $(NAME): $(SRCS)
 re: fclean $(NAME)
 
 clean:
-		rm -f *.o
+		rm -f $(OBJS)
 
 fclean: clean
 		rm -f $(NAME)

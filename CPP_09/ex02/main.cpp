@@ -1,4 +1,11 @@
 #include "PmergeMe.hpp"
+long long	get_time(void)
+{
+	struct timeval	timeval;
+
+	gettimeofday(&timeval, NULL);
+	return ((timeval.tv_sec) + (timeval.tv_usec));
+}
 
 int	ft_error(std::string str)
 {
@@ -25,13 +32,17 @@ int	main(int argc, char *argv[])
 	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
 			std::cout << *l << " ";
 		}
-	//for (int i = 0; i < size ; i++)
-		//std::cout << vec[i] << " ";
-	//std::cout<<"\nvecsize:" << vec.size() << "    /2:" << size / 2;
+	int	start = get_time();
 	vec = merge_insert_sort(vec);
+	int	end = get_time();
 	std::cout << "\nAfter: ";
 	for (std::vector<int>::iterator l = vec.begin(); l != vec.end(); l++){
 			std::cout << *l << " ";
 		}
+	std::cout << "\nTime to process a range of " << argc - 1 <<  " elements with std::vector : " << end - start << " us" << std::endl;
+	start = get_time();
+	deq = merge_insert_sort(deq);
+	end = get_time();
+	std::cout << "Time to process a range of " << argc - 1 <<  " elements with std::deque : " << end - start << " us" << std::endl;
 	return 0;
 }
